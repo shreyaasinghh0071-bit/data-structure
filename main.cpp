@@ -1,17 +1,22 @@
 #include <iostream>
 using namespace std;
 
-void printHello(int n) {
-    
-    // Base Case
-    if (n == 0) return;
-    
-    cout << "Hello" << endl;
-    
-    printHello(n - 1);
-}
-
 int main() {
-    printHello(5);
+    int stack[5];
+    int top = -1;
+
+    cout << "Enter 5 cancelled order numbers:\n";
+
+    for (int i = 0; i < 5; i++) {
+        cin >> stack[++top];
+    }
+
+    cout << "\nRecently Cancelled Orders:\n";
+
+    while (top >= 0) {
+        cout << stack[top] << endl;
+        top--;
+    }
+
     return 0;
 }
